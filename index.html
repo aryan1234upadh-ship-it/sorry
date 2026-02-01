@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sorry Anu ❤️</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: radial-gradient(circle, #ffe6ee, #ffb6c1);
+      font-family: Arial, sans-serif;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .card {
+      background: white;
+      width: 90%;
+      max-width: 350px;
+      padding: 25px;
+      border-radius: 25px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      animation: pulse 2s infinite;
+      z-index: 2;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+
+    h1 {
+      color: #ff2f68;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 18px;
+      color: #444;
+      line-height: 1.5;
+    }
+
+    button {
+      margin-top: 15px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 20px;
+      background: #ff2f68;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .heart {
+      position: fixed;
+      bottom: -10px;
+      font-size: 30px;
+      animation: floatUp 6s linear infinite;
+      opacity: 0.9;
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-120vh);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- 🎵 Music (tap button to play – works on all phones) -->
+  <audio id="bgm" loop>
+    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3" type="audio/mpeg">
+  </audio>
+
+  <div class="card">
+    <h1>Sorry Anu 🥺❤️</h1>
+    <p>
+      Dear Anu 💕<br><br>
+      I never wanted to hurt you.<br>
+      You truly mean a lot to me 🌸<br><br>
+      Please forgive me 🤍
+    </p>
+
+    <button onclick="playMusic()">Tap for Music 🎵</button>
+  </div>
+
+  <!-- 💖 Floating hearts animation -->
+  <script>
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.className = "heart";
+      heart.innerHTML = "💖";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = (4 + Math.random() * 3) + "s";
+      document.body.appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 7000);
+    }
+
+    setInterval(createHeart, 400);
+
+    function playMusic() {
+      document.getElementById("bgm").play();
+    }
+  </script>
+
+</body>
+</html>
